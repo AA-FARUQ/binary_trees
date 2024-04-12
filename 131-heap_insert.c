@@ -10,15 +10,15 @@
 heap_t *heap_insert(heap_t **root, int value)
 {
 	heap_t *tree, *new_node, *flip;
-	int total_nodes, leaves, sub_nodes, bit, level, tmp;
+	int sizee, leaves, sub_nodes, bit, level, tmp;
 
 	if (!root)
 		return (NULL);
 	if (!(*root))
 		return (*root = binary_tree_node(NULL, value));
 	tree = *root;
-	total_nodes = binary_tree_size(tree);
-	leaves = total_nodes;
+	size = binary_tree_size(tree);
+	leaves = size;
 	for (level = 0, sub_nodes = 1; leaves >= sub_nodes; sub_nodes *= 2, level++)
 		leaves -= sub_nodes;
 
