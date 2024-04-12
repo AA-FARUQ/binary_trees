@@ -2,13 +2,13 @@
 
 /**
  * binary_tree_node - Creates a binary tree node.
- * @par: A pointer to the parent of the node to create.
- * @val: The value to put in the new node.
+ * @parent: A pointer to the parent of the node to create.
+ * @value: The value to put in the new node.
  *
  * Return: If memory allocation fails - NULL.
  *         Otherwise - a pointer to the new node.
  */
-binary_tree_t *binary_tree_node(binary_tree_t *par, int val)
+binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
 	binary_tree_t *new_node;
 
@@ -16,8 +16,8 @@ binary_tree_t *binary_tree_node(binary_tree_t *par, int val)
 	if (new_node == NULL)
 		return (NULL);
 
-	new_node->n = val;
-	new_node->parent = par;
+	new_node->n = value;
+	new_node->parent = parent;
 	new_node->left = NULL;
 	new_node->right = NULL;
 
