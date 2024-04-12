@@ -18,7 +18,7 @@ int check_max(const binary_tree_t *tree)
 	{
 		if (tree->n <= tree->left->n)
 			return (0);
-		tmp1 = check_max(tree->left);
+		left_check = check_max(tree->left);
 	}
 	if (tree->right)
 	{
