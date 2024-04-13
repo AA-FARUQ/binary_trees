@@ -42,12 +42,11 @@ int is_avl_tree(const binary_tree_t *tree, int min, int max)
 			return (0);
 		left_height = get_height(tree->left);
 		right_height = get_height(tree->right);
-		diff = left_height > right_height ? left_height
-		- right_height : right_height- left_height;
+		diff = left_height > right_height ? left_height;
 		if (diff > 1)
 			return (0);
 		return (is_avl_tree(tree->left, min, tree->n - 1) &&
-			is_avl_helper(tree->right, tree->n + 1, hi));
+			is_avl_tree(tree->right, tree->n + 1, max));
 	}
 	return (1);
 }
